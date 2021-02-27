@@ -1,11 +1,13 @@
 <header>
-    
 
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-   <div><h1>Employee Management Portal</h1></div>
-   <div>Total Count 5</div>
-  </div>
+
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div>
+        <h1>Employee Management Portal</h1>
+      </div>
+      <div class="info">Total Count: {{(employeeData| async)?.length}}</div>
+    </div>
   </nav>
 
 </header>

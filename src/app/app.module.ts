@@ -10,6 +10,7 @@ import { CreateEmployeesComponent } from './create-employees/create-employees.co
 import { EditEmployeesComponent } from './edit-employees/edit-employees.component';
 import { PopupComponent } from './shared/popup/popup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

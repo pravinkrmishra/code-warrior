@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EmployeesDataService } from '../employees-data.service';
 
 @Component({
   selector: 'app-edit-employees',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditEmployeesComponent implements OnInit {
 
-  constructor() { }
+  model: any = {};
 
-  ngOnInit(): void {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private service: EmployeesDataService
+  ) {}
+
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      const userId = params["id"];
+      this.service.getEmployeeDetailById(userId).subscribe(res => {
+        this.model = res;
+      });
+    });
+
+    
+  }
+
+  onSubmit() {
+    console.log("SUCCESS!! :-)\n\n" + JSON.stringify(this.model));
   }
 
 }
