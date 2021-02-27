@@ -22,7 +22,7 @@ export class EmployeesDataService {
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 
-  deleteEmployee(id:number){
+  deleteEmployee(id){
     return this.http.delete(`${this.baseUrl}/${id}`) 
   }
   

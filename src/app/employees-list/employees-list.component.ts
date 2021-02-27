@@ -29,7 +29,7 @@ export class EmployeesListComponent implements OnInit {
   }
 
   //Delete Employee
-  deleteEmployee(employeeId:number){
+  deleteEmployee(employeeId){
     this.employeesDataService.deleteEmployee(employeeId).subscribe(data => {
       console.log("data",  data);
       let newEmployees = this.employees.filter(data => data.id !== employeeId);
