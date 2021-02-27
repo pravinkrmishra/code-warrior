@@ -14,4 +14,10 @@ export class EmployeesDataService {
   getAllemployees(){
     return this.http.get(this.baseUrl)
   }
+
+  getEmployeeDetailById(id: string){
+    return this.http.get(`${this.baseUrl}/${id}`)
+  }
+
+
 }
