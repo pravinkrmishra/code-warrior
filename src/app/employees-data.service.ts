@@ -22,6 +22,10 @@ export class EmployeesDataService {
   deleteEmployee(id:number){
     return this.http.delete(`${this.baseUrl}/${id}`) 
   }
+  
+  updateEmployeeDetails(data: any) {
+    return this.http.put(`${this.baseUrl}/${data.id}`, data);
+  }
 
 
 }

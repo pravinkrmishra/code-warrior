@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeesDataService } from '../employees-data.service';
 
 @Component({
@@ -13,8 +13,9 @@ export class EditEmployeesComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private service: EmployeesDataService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -23,12 +24,15 @@ export class EditEmployeesComponent implements OnInit {
         this.model = res;
       });
     });
-
-    
   }
 
   onSubmit() {
-    console.log("SUCCESS!! :-)\n\n" + JSON.stringify(this.model));
+    this.service.updateEmployeeDetails(this.model).subscribe((res) => {
+      alert('Record is updated sucessfully..');
+      setTimeout(() => {
+        this.router.navigate(['/emp-list']);
+      }, 0);
+    })
   }
 
 }
