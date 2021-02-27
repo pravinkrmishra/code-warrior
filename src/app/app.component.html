@@ -6,14 +6,16 @@
 
   <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li ngbNavItem>
-      <a ngbNavLink routerLink="/emp-list" routerLinkActive="active">First</a>
+      <a ngbNavLink routerLink="/emp-list" routerLinkActive="active">Employee List</a>
       <ng-template ngbNavContent>
           <app-create-employees></app-create-employees>
       </ng-template>
     </li>
     <li ngbNavItem>
-      <a ngbNavLink>Second</a>
-      <ng-template ngbNavContent>Second content</ng-template>
+      <a ngbNavLink routerLink="/create" >Create New Employee</a>
+      <ng-template ngbNavContent>
+        <app-create-employees></app-create-employees>
+      </ng-template>
     </li>
   </ul>
   <div [ngbNavOutlet]="nav"></div>
