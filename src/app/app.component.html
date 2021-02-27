@@ -1,6 +1,21 @@
 <router-outlet>
   <app-header></app-header>
 
-  <app-create-employees></app-create-employees>
+  
+
+
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink>First</a>
+      <ng-template ngbNavContent>
+          <app-create-employees></app-create-employees>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>Second</a>
+      <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
 
 </router-outlet>
