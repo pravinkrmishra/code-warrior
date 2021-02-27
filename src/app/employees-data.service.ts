@@ -19,5 +19,9 @@ export class EmployeesDataService {
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 
+  updateEmployeeDetails(data: any) {
+    return this.http.put(`${this.baseUrl}/${data.id}`, data);
+  }
+
 
 }
