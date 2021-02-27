@@ -1,3 +1,4 @@
+import { Router, RouterModule } from '@angular/router';
 import { EmployeesDataService } from './../employees-data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListComponent implements OnInit {
 
-  constructor(private employeesDataService: EmployeesDataService) { }
+  constructor(private employeesDataService: EmployeesDataService, private router: Router) { }
   employees:any = [];
 
   ngOnInit(): void {
@@ -18,6 +19,11 @@ export class EmployeesListComponent implements OnInit {
       console.log(this.employees)
     })
 
+  }
+
+  //Edit Employee
+  editEmployee(employeeId:number){
+    this.router.navigate(['/edit', employeeId]);
   }
 
 }
