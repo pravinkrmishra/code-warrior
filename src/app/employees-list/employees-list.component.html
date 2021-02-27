@@ -1,1 +1,27 @@
-<p>employees-list works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Address</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{employee.employeeId}}</td>
+      <td>
+        {{ employee.name }}
+      </td>
+      <td>{{ employee.age }}</td>
+      <td>{{ employee.mobile }}</td>
+      <td>{{ employee.address }}</td>
+      <td><button type="button" class="btn btn-primary" >Edit</button> 
+        <button type="button" style="margin-left:10px" class="btn btn-primary">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
