@@ -11,12 +11,14 @@ export class EmployeesListComponent implements OnInit {
 
   constructor(private employeesDataService: EmployeesDataService, private router: Router) { }
   employees:any = [];
+  count:number;
 
   ngOnInit(): void {
 
     this.employeesDataService.getAllemployees().subscribe(data => {
       this.employees = data;
-      console.log(this.employees)
+      console.log(this.employees);
+      this.employeesDataService.employeeCount.next(this.employees.length);
     })
 
   }
@@ -33,6 +35,7 @@ export class EmployeesListComponent implements OnInit {
       let newEmployees = this.employees.filter(data => data.id !== employeeId);
       this.employees = newEmployees;
       console.log(this.employees);
+      this.employeesDataService.employeeCount.next(this.employees.length);
     })
   }
 

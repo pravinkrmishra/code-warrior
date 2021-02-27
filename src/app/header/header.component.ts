@@ -9,10 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   employeeData: Observable<any>;
+  count:number;
   constructor(private service: EmployeesDataService) { }
 
   ngOnInit(): void {
-    this.employeeData = this.service.getAllemployees();
+    // this.employeeData = this.service.getAllemployees();
+
+    this.service.employeeCount.subscribe(risponse =>{
+      this.count = risponse;
+    })
+
   }
 
 }

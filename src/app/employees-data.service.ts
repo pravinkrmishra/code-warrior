@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ export class EmployeesDataService {
 
   constructor(private  http: HttpClient) { }
 
-  baseUrl= 'http://localhost:3000/employees'
+  baseUrl= 'http://localhost:3000/employees' ;
+
+   employeeCount = new BehaviorSubject(null);
   
 
   getAllemployees(){
