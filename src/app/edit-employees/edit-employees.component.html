@@ -1,8 +1,12 @@
 <!-- main app container -->
-<div class="">
+<div class="main">
+	<div>
+		
+	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-5 offset-md-2 content">
+				<h4>Edit Employee Details</h4>
 				<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 					<div class="form-group">
 						<label for="firstName">Employee ID:</label>  {{model.employeeId}}
