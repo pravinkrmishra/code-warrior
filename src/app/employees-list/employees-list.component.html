@@ -21,7 +21,7 @@
       <td>{{ employee.mobile }}</td>
       <td>{{ employee.address }}</td>
       <td><button type="button" class="btn btn-primary" (click)="editEmployee(employee.id)">Edit</button> 
-        <button type="button" style="margin-left:10px" class="btn btn-danger">Delete</button></td>
+        <button type="button" style="margin-left:10px" class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td>
     </tr>
     </tbody>
   </table>
